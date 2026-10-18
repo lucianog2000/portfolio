@@ -20,4 +20,8 @@ Every change follows the [engineering rules](docs/engineering-rules.md) (in Span
 npm run dev           # local dev server at localhost:4321
 npm run build         # fetches GitHub data, then builds to ./dist
 npm run fetch:github  # refresh src/data/github.json only
+npm test              # unit tests (Node's built-in runner)
+npm run lint          # ESLint
+npm run format:check  # Prettier
+npm run check         # astro check (types)
 ```
