@@ -34,7 +34,6 @@ const curated: Project[] = [
     ],
     stack: ["Next.js", "TypeScript", "Zod", "Jest", "Playwright", "axe-core", "Lighthouse CI"],
     stats: [
-      { value: "97", label: "commits, all mine" },
       { value: "45", label: "test files" },
       { value: "9", label: "ADRs" },
     ],
@@ -46,19 +45,19 @@ const curated: Project[] = [
     name: "EasyCut",
     repo: "lucianog2000/easycut", // private: no code link, metrics only
     tagline: "Enter the furniture, take the cut list.",
-    context: "AI-native build · 2026",
+    context: "Solo product · live since Sep 2026",
     year: "2026",
-    role: "Product owner, built with an AI pair",
+    role: "Founder & solo developer",
     contributions: [
-      "Built with Claude Code as an AI pair: I owned product, design direction, specs, and test strategy.",
       "Cut-list engine for grid furniture: splits space into whole millimeters and flags uneven bays with the cheapest fix.",
       "Sculpt the interior on the drawing and inspect it in a hand-rolled 3D view, with no 3D library.",
       "Works offline as a PWA; CI runs Jest and end-to-end flows, with visual regression checks locally.",
+      "Backlog, wording guide, and design specs live in the repo next to the code.",
     ],
-    stack: ["React", "TypeScript", "Vite", "PWA", "Jest", "Playwright", "Claude Code"],
+    stack: ["React", "TypeScript", "Vite", "PWA", "Jest", "Playwright"],
     stats: [
       { value: "123", label: "test files" },
-      { value: "37/92", label: "commits by me, rest by the agent" },
+      { value: "0", label: "runtime deps beyond React" },
     ],
     links: [{ label: "live", url: "https://easycut.click" }],
     image: "/work/easycut.png",
