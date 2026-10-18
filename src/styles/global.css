@@ -17,6 +17,10 @@
   --color-accent: #2563eb;
   --color-accent-glow: #4f86f7;
   --color-phosphor: #fb8a1c;
+  --color-signal: #b9d0ff;
+  --color-signal-soft: #8fb4ff;
+
+  --duration-boot: 900ms;
 }
 
 @layer base {

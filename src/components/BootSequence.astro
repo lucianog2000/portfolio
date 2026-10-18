@@ -1,0 +1,267 @@
+---
+const shards = [
+  { top: 47.6, left: 4, width: 22, height: 3, tone: "glow", alt: false },
+  { top: 48.4, left: 30, width: 34, height: 2, tone: "accent", alt: true },
+  { top: 49.2, left: 58, width: 26, height: 1, tone: "soft", alt: false },
+  { top: 50.6, left: 10, width: 30, height: 2, tone: "glow", alt: true },
+  { top: 51.3, left: 46, width: 18, height: 2, tone: "phosphor", alt: false },
+  { top: 52.2, left: 70, width: 24, height: 3, tone: "accent", alt: true },
+  { top: 46.8, left: 62, width: 12, height: 2, tone: "phosphor", alt: false },
+  { top: 53.4, left: 22, width: 16, height: 1, tone: "soft", alt: true },
+];
+---
+
+<div class="boot" aria-hidden="true">
+  <div class="boot-panel top"></div>
+  <div class="boot-panel bottom"></div>
+  <div class="boot-signal"></div>
+  {shards.map((s) => (
+    <div
+      class:list={["boot-shard", `tone-${s.tone}`, { alt: s.alt }]}
+      style={`--top:${s.top}%;--left:${s.left}%;--width:${s.width}%;--height:${s.height}px`}
+    />
+  ))}
+</div>
+
+<style>
+  .boot {
+    display: none;
+  }
+
+  :global(html[data-boot="play"]) .boot {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    pointer-events: none;
+    animation: boot-overlay var(--duration-boot) linear both;
+  }
+
+  :global(html[data-boot="play"]) :global(body > :is(main, nav, footer, .backdrop)) {
+    animation: boot-flash var(--duration-boot) linear both;
+  }
+
+  .boot-panel {
+    position: absolute;
+    inset-inline: 0;
+    height: 50%;
+    background: var(--color-bg);
+    animation: boot-panel var(--duration-boot) linear both;
+  }
+  .boot-panel.top {
+    top: 0;
+    transform-origin: top;
+  }
+  .boot-panel.bottom {
+    bottom: 0;
+    transform-origin: bottom;
+  }
+
+  :global(html[data-boot="play"]) :global(main h1) {
+    animation: boot-chroma var(--duration-boot) linear both;
+  }
+
+  .boot-signal {
+    position: absolute;
+    inset-inline: 0;
+    top: 50%;
+    height: 2px;
+    margin-top: -1px;
+    background: var(--color-signal);
+    box-shadow:
+      0 0 6px 1px var(--color-accent-glow),
+      0 0 28px 6px color-mix(in srgb, var(--color-accent) 45%, transparent);
+    animation: boot-signal var(--duration-boot) linear both;
+  }
+
+  .boot-shard {
+    position: absolute;
+    top: var(--top);
+    left: var(--left);
+    width: var(--width);
+    height: var(--height);
+    animation: boot-shard var(--duration-boot) steps(1, end) both;
+  }
+  .boot-shard.alt {
+    animation-name: boot-shard-alt;
+  }
+  .tone-glow {
+    background: var(--color-accent-glow);
+  }
+  .tone-accent {
+    background: var(--color-accent);
+  }
+  .tone-soft {
+    background: var(--color-signal-soft);
+  }
+  .tone-phosphor {
+    background: var(--color-phosphor);
+  }
+
+  @keyframes boot-overlay {
+    0%,
+    78% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  @keyframes boot-panel {
+    0%,
+    58% {
+      transform: scaleY(1);
+    }
+    80%,
+    100% {
+      transform: scaleY(0);
+    }
+  }
+
+  @keyframes boot-flash {
+    0%,
+    58% {
+      filter: brightness(1.8);
+    }
+    80% {
+      filter: brightness(1.25);
+    }
+    100% {
+      filter: none;
+    }
+  }
+
+  @keyframes boot-signal {
+    0% {
+      opacity: 0;
+      transform: scaleX(0.2);
+    }
+    8% {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    20% {
+      opacity: 0.55;
+    }
+    24% {
+      opacity: 1;
+    }
+    40% {
+      opacity: 0.7;
+    }
+    44% {
+      opacity: 1;
+    }
+    58% {
+      opacity: 1;
+      transform: scaleY(1);
+    }
+    72%,
+    100% {
+      opacity: 0;
+      transform: scaleY(18);
+    }
+  }
+
+  @keyframes boot-shard {
+    0% {
+      opacity: 0;
+      transform: translateX(0);
+    }
+    6% {
+      opacity: 0.9;
+      transform: translateX(-40px);
+    }
+    18% {
+      opacity: 0.6;
+      transform: translateX(60px);
+    }
+    30% {
+      opacity: 0.9;
+      transform: translateX(-90px);
+    }
+    42% {
+      opacity: 0.5;
+      transform: translateX(30px);
+    }
+    54% {
+      opacity: 0.8;
+      transform: translateX(-20px);
+    }
+    62%,
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes boot-shard-alt {
+    0% {
+      opacity: 0;
+      transform: translateX(0);
+    }
+    10% {
+      opacity: 0.7;
+      transform: translateX(70px);
+    }
+    22% {
+      opacity: 0.9;
+      transform: translateX(-30px);
+    }
+    36% {
+      opacity: 0.4;
+      transform: translateX(110px);
+    }
+    48% {
+      opacity: 0.9;
+      transform: translateX(-60px);
+    }
+    60%,
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes boot-chroma {
+    0%,
+    76% {
+      text-shadow:
+        -6px 0 color-mix(in srgb, var(--color-phosphor) 85%, transparent),
+        6px 0 color-mix(in srgb, var(--color-accent-glow) 95%, transparent);
+    }
+    88% {
+      text-shadow:
+        -2px 0 color-mix(in srgb, var(--color-phosphor) 60%, transparent),
+        2px 0 color-mix(in srgb, var(--color-accent-glow) 70%, transparent);
+    }
+    100% {
+      text-shadow: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .boot {
+      display: none !important;
+    }
+  }
+</style>
+
+<script>
+  import { runBoot } from "../lib/boot";
+
+  const storage = (() => {
+    try {
+      return window.sessionStorage;
+    } catch {
+      return null;
+    }
+  })();
+
+  runBoot(document.documentElement, {
+    storage,
+    setTimeout: (fn, ms) => window.setTimeout(fn, ms),
+    addEventListener: (type, fn) => window.addEventListener(type, fn),
+    removeEventListener: (type, fn) => window.removeEventListener(type, fn),
+  });
+</script>
