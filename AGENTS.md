@@ -1,3 +1,7 @@
+# Agent instructions
+
+**Before any change, read and follow [docs/engineering-rules.md](docs/engineering-rules.md).** Decisions live in [docs/adr/](docs/adr/).
+
 ## Development
 
 When starting the dev server, use background mode:
