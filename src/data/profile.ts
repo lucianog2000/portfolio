@@ -7,7 +7,7 @@ export const profile = {
   role: "Full-stack developer",
   location: "Córdoba, Argentina",
   tldr:
-    "I'm a full-stack developer building e-commerce at scale by day and on-chain products at hackathons by night. I care about fast interfaces, clean data flows, and shipping.",
+    "I'm a full-stack developer building e-commerce at scale by day and my own products by night. I care about fast interfaces, clean data flows, tests that catch real bugs, and shipping.",
   today: {
     company: "Personal (Telecom Argentina)",
     text:

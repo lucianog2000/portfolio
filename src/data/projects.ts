@@ -19,6 +19,51 @@ export interface Project {
 
 const curated: Project[] = [
   {
+    slug: "carswatch",
+    name: "CarsWatch",
+    repo: "lucianog2000/motorpass", // private: no code link, metrics only
+    tagline: "The place for BMW E36 owners.",
+    context: "Solo product · in progress since Sep 2026",
+    year: "2026",
+    role: "Founder & solo developer",
+    contributions: [
+      "Owner-written workshop guides with exact part lists linked to RealOEM, starting with the E36 and growing chassis by chassis.",
+      "Content as validated YAML: the build fails on bad data, like a BMW part number that isn't 11 digits.",
+      "English and Spanish with ICU messages, light and dark themes, installable as an app.",
+      "Product decisions written as ADRs; changes land through PRs, with CI running unit, e2e, accessibility, and Lighthouse checks.",
+    ],
+    stack: ["Next.js", "TypeScript", "Zod", "Jest", "Playwright", "axe-core", "Lighthouse CI"],
+    stats: [
+      { value: "97", label: "commits, all mine" },
+      { value: "45", label: "test files" },
+      { value: "9", label: "ADRs" },
+    ],
+    links: [{ label: "live", url: "https://carswatch.app" }],
+    image: "/work/carswatch.png",
+  },
+  {
+    slug: "easycut",
+    name: "EasyCut",
+    repo: "lucianog2000/easycut", // private: no code link, metrics only
+    tagline: "Enter the furniture, take the cut list.",
+    context: "AI-native build · 2026",
+    year: "2026",
+    role: "Product owner, built with an AI pair",
+    contributions: [
+      "Built with Claude Code as an AI pair: I owned product, design direction, specs, and test strategy.",
+      "Cut-list engine for grid furniture: splits space into whole millimeters and flags uneven bays with the cheapest fix.",
+      "Sculpt the interior on the drawing and inspect it in a hand-rolled 3D view, with no 3D library.",
+      "Works offline as a PWA; CI runs Jest and end-to-end flows, with visual regression checks locally.",
+    ],
+    stack: ["React", "TypeScript", "Vite", "PWA", "Jest", "Playwright", "Claude Code"],
+    stats: [
+      { value: "123", label: "test files" },
+      { value: "37/92", label: "commits by me, rest by the agent" },
+    ],
+    links: [{ label: "live", url: "https://easycut.click" }],
+    image: "/work/easycut.png",
+  },
+  {
     slug: "vstreet",
     name: "vStreet",
     repo: "vstreet-defi/vstreet",
