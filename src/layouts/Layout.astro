@@ -1,0 +1,83 @@
+---
+import { ClientRouter } from "astro:transitions";
+import "../styles/global.css";
+import { profile } from "../data/profile";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description = profile.tldr } = Astro.props;
+const pageTitle = title ? `${title} • ${profile.fullName}` : `${profile.fullName} • ${profile.role}`;
+const path = Astro.url.pathname.replace(/\/$/, "") || "/";
+
+const nav = [
+  { label: "root", href: "/" },
+  { label: "about", href: "/about" },
+  { label: "work", href: "/work" },
+  { label: "contact", href: "/#contact" },
+];
+const isActive = (href: string) => (href === "/" ? path === "/" : path.startsWith(href) && !href.includes("#"));
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta name="theme-color" content="#1c1b1f" />
+    <ClientRouter />
+  </head>
+  <body class="relative min-h-dvh">
+    <div class="backdrop" aria-hidden="true" transition:persist></div>
+
+    <main class="relative z-10 mx-auto w-full max-w-[1500px] px-5 pb-40 pt-10 sm:px-10 sm:pt-14">
+      <slot />
+    </main>
+
+    <nav
+      aria-label="Primary"
+      class="fixed inset-x-0 bottom-5 z-30 flex justify-center px-4"
+      transition:persist
+    >
+      <div class="flex gap-1 rounded-[40px] bg-surface/90 p-1.5 shadow-[0_10px_40px_rgb(0_0_0/0.5)] ring-1 ring-white/5 backdrop-blur">
+        {
+          nav.map((item) => (
+            <a
+              href={item.href}
+              data-nav={item.href}
+              aria-current={isActive(item.href) ? "page" : undefined}
+              class="flex h-11 min-w-[64px] items-center justify-center rounded-[36px] px-4 text-[11px] tracking-[0.1em] text-muted transition-colors hover:text-text aria-[current=page]:bg-accent aria-[current=page]:text-white aria-[current=page]:shadow-[0_0_24px_rgb(37_99_235/0.55)] sm:min-w-[84px]"
+            >
+              {item.label}
+            </a>
+          ))
+        }
+      </div>
+    </nav>
+
+    <footer class="relative z-10 mx-auto flex max-w-[1500px] flex-col gap-1 border-t border-divider px-5 py-5 pb-24 text-[11px] text-faint sm:flex-row sm:justify-between sm:px-10 sm:pb-5">
+      <span>© {new Date().getFullYear()} {profile.fullName}</span>
+      <span>Built with Astro · data from GitHub &amp; LinkedIn</span>
+    </footer>
+
+    <script>
+      // Keep the persisted nav's active pill in sync after client-side navigation.
+      document.addEventListener("astro:page-load", () => {
+        const path = location.pathname.replace(/\/$/, "") || "/";
+        document.querySelectorAll<HTMLAnchorElement>("[data-nav]").forEach((a) => {
+          const href = a.dataset.nav!;
+          const active = href === "/" ? path === "/" : !href.includes("#") && path.startsWith(href);
+          if (active) a.setAttribute("aria-current", "page");
+          else a.removeAttribute("aria-current");
+        });
+      });
+    </script>
+  </body>
+</html>

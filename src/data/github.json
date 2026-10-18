@@ -1,0 +1,565 @@
+{
+  "fetchedAt": "2026-10-18T01:59:55.851Z",
+  "profile": {
+    "name": "Luchex",
+    "login": "lucianog2000",
+    "bio": "Crypto Enthusiast (?",
+    "location": "Argentina",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/40703841?u=ff6334fe2799e56f3f59a353984278d00cf0e1db&v=4",
+    "url": "https://github.com/lucianog2000",
+    "twitter": "_luchex",
+    "website": null,
+    "createdAt": "2018-06-29T21:13:46Z",
+    "followers": 3,
+    "publicRepos": 10
+  },
+  "pinned": [
+    {
+      "name": "Polkadot-Attestations",
+      "fullName": "PsyLabsWeb3/Polkadot-Attestations",
+      "owner": "PsyLabsWeb3",
+      "description": null,
+      "url": "https://github.com/PsyLabsWeb3/Polkadot-Attestations",
+      "homepage": null,
+      "stars": 3,
+      "forks": 0,
+      "updatedAt": "2025-01-23T19:25:59Z",
+      "language": "Rust",
+      "languages": [
+        {
+          "name": "Rust",
+          "color": "#dea584",
+          "size": 154992
+        },
+        {
+          "name": "TypeScript",
+          "color": "#3178c6",
+          "size": 93459
+        },
+        {
+          "name": "CSS",
+          "color": "#663399",
+          "size": 1707
+        },
+        {
+          "name": "JavaScript",
+          "color": "#f1e05a",
+          "size": 689
+        },
+        {
+          "name": "HTML",
+          "color": "#e34c26",
+          "size": 409
+        }
+      ],
+      "topics": []
+    },
+    {
+      "name": "vstreet",
+      "fullName": "vstreet-defi/vstreet",
+      "owner": "vstreet-defi",
+      "description": null,
+      "url": "https://github.com/vstreet-defi/vstreet",
+      "homepage": "https://vstreet.vercel.app",
+      "stars": 3,
+      "forks": 3,
+      "updatedAt": "2026-05-08T19:38:41Z",
+      "language": "TypeScript",
+      "languages": [
+        {
+          "name": "TypeScript",
+          "color": "#3178c6",
+          "size": 529071
+        },
+        {
+          "name": "SCSS",
+          "color": "#c6538c",
+          "size": 206382
+        },
+        {
+          "name": "Rust",
+          "color": "#dea584",
+          "size": 159075
+        },
+        {
+          "name": "JavaScript",
+          "color": "#f1e05a",
+          "size": 2484
+        },
+        {
+          "name": "CSS",
+          "color": "#663399",
+          "size": 1588
+        },
+        {
+          "name": "HTML",
+          "color": "#e34c26",
+          "size": 699
+        },
+        {
+          "name": "Shell",
+          "color": "#89e051",
+          "size": 320
+        }
+      ],
+      "topics": []
+    },
+    {
+      "name": "AutoPassport",
+      "fullName": "lucianog2000/AutoPassport",
+      "owner": "lucianog2000",
+      "description": null,
+      "url": "https://github.com/lucianog2000/AutoPassport",
+      "homepage": "https://auto-passport.vercel.app",
+      "stars": 1,
+      "forks": 0,
+      "updatedAt": "2023-06-09T21:59:08Z",
+      "language": "JavaScript",
+      "languages": [
+        {
+          "name": "JavaScript",
+          "color": "#f1e05a",
+          "size": 83964
+        },
+        {
+          "name": "Solidity",
+          "color": "#AA6746",
+          "size": 11130
+        },
+        {
+          "name": "CSS",
+          "color": "#663399",
+          "size": 6110
+        },
+        {
+          "name": "HTML",
+          "color": "#e34c26",
+          "size": 1443
+        }
+      ],
+      "topics": []
+    },
+    {
+      "name": "luciano-gear-academy",
+      "fullName": "lucianog2000/luciano-gear-academy",
+      "owner": "lucianog2000",
+      "description": "Template for Gear Academy homework",
+      "url": "https://github.com/lucianog2000/luciano-gear-academy",
+      "homepage": "https://academy.dapp.rs",
+      "stars": 0,
+      "forks": 0,
+      "updatedAt": "2024-01-25T11:50:42Z",
+      "language": "TypeScript",
+      "languages": [
+        {
+          "name": "TypeScript",
+          "color": "#3178c6",
+          "size": 126878
+        },
+        {
+          "name": "Rust",
+          "color": "#dea584",
+          "size": 78510
+        },
+        {
+          "name": "JavaScript",
+          "color": "#f1e05a",
+          "size": 3421
+        },
+        {
+          "name": "SCSS",
+          "color": "#c6538c",
+          "size": 1796
+        },
+        {
+          "name": "CSS",
+          "color": "#663399",
+          "size": 1745
+        },
+        {
+          "name": "HTML",
+          "color": "#e34c26",
+          "size": 343
+        },
+        {
+          "name": "Makefile",
+          "color": "#427819",
+          "size": 133
+        }
+      ],
+      "topics": []
+    },
+    {
+      "name": "Warpify",
+      "fullName": "TerratekMusic/Warpify",
+      "owner": "TerratekMusic",
+      "description": null,
+      "url": "https://github.com/TerratekMusic/Warpify",
+      "homepage": "https://warpify.vercel.app",
+      "stars": 0,
+      "forks": 0,
+      "updatedAt": "2024-07-01T20:33:56Z",
+      "language": "TypeScript",
+      "languages": [
+        {
+          "name": "TypeScript",
+          "color": "#3178c6",
+          "size": 8679
+        },
+        {
+          "name": "JavaScript",
+          "color": "#f1e05a",
+          "size": 582
+        }
+      ],
+      "topics": []
+    }
+  ],
+  "repos": [
+    {
+      "name": "eternalvault",
+      "fullName": "lucianog2000/eternalvault",
+      "owner": "lucianog2000",
+      "description": null,
+      "url": "https://github.com/lucianog2000/eternalvault",
+      "homepage": null,
+      "stars": 0,
+      "forks": 0,
+      "updatedAt": "2025-06-30T15:38:55Z",
+      "language": "TypeScript",
+      "languages": [
+        {
+          "name": "TypeScript",
+          "color": "#3178c6",
+          "size": 363745
+        },
+        {
+          "name": "JavaScript",
+          "color": "#f1e05a",
+          "size": 311147
+        },
+        {
+          "name": "PLpgSQL",
+          "color": "#336790",
+          "size": 20340
+        },
+        {
+          "name": "HTML",
+          "color": "#e34c26",
+          "size": 639
+        },
+        {
+          "name": "CSS",
+          "color": "#663399",
+          "size": 59
+        }
+      ],
+      "topics": []
+    },
+    {
+      "name": "docs-polkattest-node",
+      "fullName": "lucianog2000/docs-polkattest-node",
+      "owner": "lucianog2000",
+      "description": null,
+      "url": "https://github.com/lucianog2000/docs-polkattest-node",
+      "homepage": null,
+      "stars": 0,
+      "forks": 1,
+      "updatedAt": "2024-10-22T15:52:36Z",
+      "language": null,
+      "languages": [],
+      "topics": []
+    },
+    {
+      "name": "xtf",
+      "fullName": "lucianog2000/xtf",
+      "owner": "lucianog2000",
+      "description": null,
+      "url": "https://github.com/lucianog2000/xtf",
+      "homepage": "https://xtf.vercel.app",
+      "stars": 0,
+      "forks": 1,
+      "updatedAt": "2023-12-21T18:50:09Z",
+      "language": "TypeScript",
+      "languages": [
+        {
+          "name": "TypeScript",
+          "color": "#3178c6",
+          "size": 276644
+        },
+        {
+          "name": "Solidity",
+          "color": "#AA6746",
+          "size": 183661
+        },
+        {
+          "name": "CSS",
+          "color": "#663399",
+          "size": 10394
+        },
+        {
+          "name": "JavaScript",
+          "color": "#f1e05a",
+          "size": 2678
+        }
+      ],
+      "topics": []
+    },
+    {
+      "name": "xchain-car-tokenizer",
+      "fullName": "lucianog2000/xchain-car-tokenizer",
+      "owner": "lucianog2000",
+      "description": null,
+      "url": "https://github.com/lucianog2000/xchain-car-tokenizer",
+      "homepage": null,
+      "stars": 0,
+      "forks": 0,
+      "updatedAt": "2023-12-08T13:52:07Z",
+      "language": "JavaScript",
+      "languages": [
+        {
+          "name": "JavaScript",
+          "color": "#f1e05a",
+          "size": 6695
+        },
+        {
+          "name": "Solidity",
+          "color": "#AA6746",
+          "size": 1007
+        }
+      ],
+      "topics": []
+    },
+    {
+      "name": "demo-frontend",
+      "fullName": "lucianog2000/demo-frontend",
+      "owner": "lucianog2000",
+      "description": "Frontend demonstration",
+      "url": "https://github.com/lucianog2000/demo-frontend",
+      "homepage": "https://app.cexles.finance/",
+      "stars": 0,
+      "forks": 0,
+      "updatedAt": "2023-11-03T01:20:49Z",
+      "language": "TypeScript",
+      "languages": [
+        {
+          "name": "TypeScript",
+          "color": "#3178c6",
+          "size": 1040993
+        },
+        {
+          "name": "SCSS",
+          "color": "#c6538c",
+          "size": 52603
+        },
+        {
+          "name": "JavaScript",
+          "color": "#f1e05a",
+          "size": 813
+        },
+        {
+          "name": "CSS",
+          "color": "#663399",
+          "size": 573
+        },
+        {
+          "name": "Shell",
+          "color": "#89e051",
+          "size": 262
+        }
+      ],
+      "topics": []
+    },
+    {
+      "name": "trading-smart-contracts",
+      "fullName": "lucianog2000/trading-smart-contracts",
+      "owner": "lucianog2000",
+      "description": "This repository contains code of Trading Smart Contracts.",
+      "url": "https://github.com/lucianog2000/trading-smart-contracts",
+      "homepage": "https://goerli.etherscan.io/address/0x03D55c808d4B19B82157a3B1E75113D0d86D105c",
+      "stars": 0,
+      "forks": 0,
+      "updatedAt": "2023-11-03T01:20:35Z",
+      "language": "TypeScript",
+      "languages": [
+        {
+          "name": "TypeScript",
+          "color": "#3178c6",
+          "size": 200200
+        },
+        {
+          "name": "Solidity",
+          "color": "#AA6746",
+          "size": 95028
+        },
+        {
+          "name": "JavaScript",
+          "color": "#f1e05a",
+          "size": 2140
+        }
+      ],
+      "topics": []
+    },
+    {
+      "name": "evm-template",
+      "fullName": "lucianog2000/evm-template",
+      "owner": "lucianog2000",
+      "description": null,
+      "url": "https://github.com/lucianog2000/evm-template",
+      "homepage": null,
+      "stars": 0,
+      "forks": 0,
+      "updatedAt": "2023-10-16T21:51:30Z",
+      "language": "TypeScript",
+      "languages": [
+        {
+          "name": "TypeScript",
+          "color": "#3178c6",
+          "size": 9648
+        },
+        {
+          "name": "Solidity",
+          "color": "#AA6746",
+          "size": 4194
+        },
+        {
+          "name": "JavaScript",
+          "color": "#f1e05a",
+          "size": 709
+        }
+      ],
+      "topics": []
+    },
+    {
+      "name": "AutoPassport",
+      "fullName": "lucianog2000/AutoPassport",
+      "owner": "lucianog2000",
+      "description": null,
+      "url": "https://github.com/lucianog2000/AutoPassport",
+      "homepage": "https://auto-passport.vercel.app",
+      "stars": 1,
+      "forks": 0,
+      "updatedAt": "2023-06-09T21:59:08Z",
+      "language": "JavaScript",
+      "languages": [
+        {
+          "name": "JavaScript",
+          "color": "#f1e05a",
+          "size": 83964
+        },
+        {
+          "name": "Solidity",
+          "color": "#AA6746",
+          "size": 11130
+        },
+        {
+          "name": "CSS",
+          "color": "#663399",
+          "size": 6110
+        },
+        {
+          "name": "HTML",
+          "color": "#e34c26",
+          "size": 1443
+        }
+      ],
+      "topics": []
+    },
+    {
+      "name": "portfolio",
+      "fullName": "lucianog2000/portfolio",
+      "owner": "lucianog2000",
+      "description": "Personal portfolio",
+      "url": "https://github.com/lucianog2000/portfolio",
+      "homepage": null,
+      "stars": 0,
+      "forks": 0,
+      "updatedAt": "2022-09-21T15:12:43Z",
+      "language": null,
+      "languages": [],
+      "topics": []
+    },
+    {
+      "name": "Prueba1",
+      "fullName": "lucianog2000/Prueba1",
+      "owner": "lucianog2000",
+      "description": null,
+      "url": "https://github.com/lucianog2000/Prueba1",
+      "homepage": null,
+      "stars": 0,
+      "forks": 0,
+      "updatedAt": "2022-02-18T15:27:07Z",
+      "language": "HTML",
+      "languages": [
+        {
+          "name": "HTML",
+          "color": "#e34c26",
+          "size": 84
+        }
+      ],
+      "topics": []
+    }
+  ],
+  "languages": [
+    {
+      "name": "TypeScript",
+      "color": "#3178c6",
+      "size": 2649317,
+      "percent": 65.3
+    },
+    {
+      "name": "JavaScript",
+      "color": "#f1e05a",
+      "size": 415322,
+      "percent": 10.2
+    },
+    {
+      "name": "Rust",
+      "color": "#dea584",
+      "size": 392577,
+      "percent": 9.7
+    },
+    {
+      "name": "Solidity",
+      "color": "#AA6746",
+      "size": 295020,
+      "percent": 7.3
+    },
+    {
+      "name": "SCSS",
+      "color": "#c6538c",
+      "size": 260781,
+      "percent": 6.4
+    },
+    {
+      "name": "CSS",
+      "color": "#663399",
+      "size": 22176,
+      "percent": 0.5
+    },
+    {
+      "name": "PLpgSQL",
+      "color": "#336790",
+      "size": 20340,
+      "percent": 0.5
+    },
+    {
+      "name": "HTML",
+      "color": "#e34c26",
+      "size": 3617,
+      "percent": 0.1
+    },
+    {
+      "name": "Shell",
+      "color": "#89e051",
+      "size": 582,
+      "percent": 0
+    },
+    {
+      "name": "Makefile",
+      "color": "#427819",
+      "size": 133,
+      "percent": 0
+    }
+  ]
+}

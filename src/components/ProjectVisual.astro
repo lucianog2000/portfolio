@@ -1,0 +1,67 @@
+---
+// Visual for a project: the live-demo screenshot when there is one,
+// otherwise a terminal-style card built from real repo data.
+import type { projects } from "../data/projects";
+
+interface Props {
+  project: (typeof projects)[number];
+}
+
+const { project: p } = Astro.props;
+const repoName = p.repo.split("/")[1];
+---
+
+{
+  p.image ? (
+    <figure class="relative aspect-[16/10] w-[min(88vw,760px)] shrink-0 overflow-hidden rounded-[28px] bg-surface ring-1 ring-white/10">
+      <img src={p.image} alt={`${p.name} live demo`} class="size-full object-cover object-top" loading="lazy" />
+      <span class="absolute left-4 top-4 size-3 rounded-full ring-1 ring-black/30" />
+    </figure>
+  ) : (
+    <figure class="relative flex aspect-[16/10] w-[min(88vw,760px)] shrink-0 flex-col overflow-hidden rounded-[28px] bg-[#111014] ring-1 ring-white/10">
+      <div class="flex items-center gap-2 border-b border-white/5 px-5 py-3 text-[11px] text-faint">
+        <span class="size-2.5 rounded-full bg-white/10" />
+        <span class="size-2.5 rounded-full bg-white/10" />
+        <span class="size-2.5 rounded-full bg-white/10" />
+        <span class="ml-3">~/{repoName}</span>
+      </div>
+      <div class="flex flex-1 flex-col justify-between p-6 sm:p-8">
+        <div class="space-y-1.5 text-[12px]">
+          <p>
+            <span class="text-accent-glow">$</span> cat STATS
+          </p>
+          {p.stats.map((s) => (
+            <p class="text-muted">
+              <span class="inline-block w-16 text-right text-phosphor">{s.value}</span> {s.label}
+            </p>
+          ))}
+          <p class="pt-3">
+            <span class="text-accent-glow">$</span> cat ROLE
+          </p>
+          <p class="text-muted">{p.role}</p>
+        </div>
+
+        <p class="max-w-[22ch] font-display text-[clamp(1.4rem,3.4vw,2.6rem)] font-[650] leading-[1.05] tracking-[-0.03em]">
+          {p.tagline}
+        </p>
+
+        {p.languages.length > 0 && (
+          <div>
+            <div class="flex h-1.5 overflow-hidden rounded-full bg-white/5">
+              {p.languages.map((l) => (
+                <span style={`width:${l.percent}%;background:${l.color}`} />
+              ))}
+            </div>
+            <p class="mt-2 flex flex-wrap gap-x-4 text-[11px] text-faint">
+              {p.languages.map((l) => (
+                <span>
+                  {l.name.toLowerCase()} {Math.round(l.percent)}%
+                </span>
+              ))}
+            </p>
+          </div>
+        )}
+      </div>
+    </figure>
+  )
+}
