@@ -1,17 +1,17 @@
 {
-  "fetchedAt": "2026-10-18T01:59:55.851Z",
+  "fetchedAt": "2026-10-18T02:13:38.026Z",
   "profile": {
     "name": "Luchex",
     "login": "lucianog2000",
-    "bio": "Crypto Enthusiast (?",
-    "location": "Argentina",
+    "bio": "Full-stack developer · Remix, Go & Web3 · ETHGlobal Brussels winner (Vara track)",
+    "location": "Córdoba, Argentina",
     "avatarUrl": "https://avatars.githubusercontent.com/u/40703841?u=ff6334fe2799e56f3f59a353984278d00cf0e1db&v=4",
     "url": "https://github.com/lucianog2000",
-    "twitter": "_luchex",
-    "website": null,
+    "twitter": "luchexdev",
+    "website": "https://luciano-garcia.vercel.app",
     "createdAt": "2018-06-29T21:13:46Z",
     "followers": 3,
-    "publicRepos": 10
+    "publicRepos": 6
   },
   "pinned": [
     {
@@ -220,12 +220,12 @@
       "name": "eternalvault",
       "fullName": "lucianog2000/eternalvault",
       "owner": "lucianog2000",
-      "description": null,
+      "description": "Digital legacy vault built in a day for a Bolt.new hackathon (React + Supabase)",
       "url": "https://github.com/lucianog2000/eternalvault",
-      "homepage": null,
+      "homepage": "https://luciano-garcia.vercel.app/work#eternalvault",
       "stars": 0,
       "forks": 0,
-      "updatedAt": "2025-06-30T15:38:55Z",
+      "updatedAt": "2026-10-18T02:13:31Z",
       "language": "TypeScript",
       "languages": [
         {
@@ -241,7 +241,7 @@
         {
           "name": "PLpgSQL",
           "color": "#336790",
-          "size": 20340
+          "size": 23130
         },
         {
           "name": "HTML",
@@ -252,6 +252,41 @@
           "name": "CSS",
           "color": "#663399",
           "size": 59
+        }
+      ],
+      "topics": []
+    },
+    {
+      "name": "portfolio",
+      "fullName": "lucianog2000/portfolio",
+      "owner": "lucianog2000",
+      "description": "Personal portfolio",
+      "url": "https://github.com/lucianog2000/portfolio",
+      "homepage": "https://luciano-garcia.vercel.app",
+      "stars": 0,
+      "forks": 0,
+      "updatedAt": "2026-10-18T02:11:07Z",
+      "language": "Astro",
+      "languages": [
+        {
+          "name": "Astro",
+          "color": "#ff5a03",
+          "size": 15950
+        },
+        {
+          "name": "TypeScript",
+          "color": "#3178c6",
+          "size": 10122
+        },
+        {
+          "name": "JavaScript",
+          "color": "#f1e05a",
+          "size": 4341
+        },
+        {
+          "name": "CSS",
+          "color": "#663399",
+          "size": 2598
         }
       ],
       "topics": []
@@ -268,41 +303,6 @@
       "updatedAt": "2024-10-22T15:52:36Z",
       "language": null,
       "languages": [],
-      "topics": []
-    },
-    {
-      "name": "xtf",
-      "fullName": "lucianog2000/xtf",
-      "owner": "lucianog2000",
-      "description": null,
-      "url": "https://github.com/lucianog2000/xtf",
-      "homepage": "https://xtf.vercel.app",
-      "stars": 0,
-      "forks": 1,
-      "updatedAt": "2023-12-21T18:50:09Z",
-      "language": "TypeScript",
-      "languages": [
-        {
-          "name": "TypeScript",
-          "color": "#3178c6",
-          "size": 276644
-        },
-        {
-          "name": "Solidity",
-          "color": "#AA6746",
-          "size": 183661
-        },
-        {
-          "name": "CSS",
-          "color": "#663399",
-          "size": 10394
-        },
-        {
-          "name": "JavaScript",
-          "color": "#f1e05a",
-          "size": 2678
-        }
-      ],
       "topics": []
     },
     {
@@ -326,106 +326,6 @@
           "name": "Solidity",
           "color": "#AA6746",
           "size": 1007
-        }
-      ],
-      "topics": []
-    },
-    {
-      "name": "demo-frontend",
-      "fullName": "lucianog2000/demo-frontend",
-      "owner": "lucianog2000",
-      "description": "Frontend demonstration",
-      "url": "https://github.com/lucianog2000/demo-frontend",
-      "homepage": "https://app.cexles.finance/",
-      "stars": 0,
-      "forks": 0,
-      "updatedAt": "2023-11-03T01:20:49Z",
-      "language": "TypeScript",
-      "languages": [
-        {
-          "name": "TypeScript",
-          "color": "#3178c6",
-          "size": 1040993
-        },
-        {
-          "name": "SCSS",
-          "color": "#c6538c",
-          "size": 52603
-        },
-        {
-          "name": "JavaScript",
-          "color": "#f1e05a",
-          "size": 813
-        },
-        {
-          "name": "CSS",
-          "color": "#663399",
-          "size": 573
-        },
-        {
-          "name": "Shell",
-          "color": "#89e051",
-          "size": 262
-        }
-      ],
-      "topics": []
-    },
-    {
-      "name": "trading-smart-contracts",
-      "fullName": "lucianog2000/trading-smart-contracts",
-      "owner": "lucianog2000",
-      "description": "This repository contains code of Trading Smart Contracts.",
-      "url": "https://github.com/lucianog2000/trading-smart-contracts",
-      "homepage": "https://goerli.etherscan.io/address/0x03D55c808d4B19B82157a3B1E75113D0d86D105c",
-      "stars": 0,
-      "forks": 0,
-      "updatedAt": "2023-11-03T01:20:35Z",
-      "language": "TypeScript",
-      "languages": [
-        {
-          "name": "TypeScript",
-          "color": "#3178c6",
-          "size": 200200
-        },
-        {
-          "name": "Solidity",
-          "color": "#AA6746",
-          "size": 95028
-        },
-        {
-          "name": "JavaScript",
-          "color": "#f1e05a",
-          "size": 2140
-        }
-      ],
-      "topics": []
-    },
-    {
-      "name": "evm-template",
-      "fullName": "lucianog2000/evm-template",
-      "owner": "lucianog2000",
-      "description": null,
-      "url": "https://github.com/lucianog2000/evm-template",
-      "homepage": null,
-      "stars": 0,
-      "forks": 0,
-      "updatedAt": "2023-10-16T21:51:30Z",
-      "language": "TypeScript",
-      "languages": [
-        {
-          "name": "TypeScript",
-          "color": "#3178c6",
-          "size": 9648
-        },
-        {
-          "name": "Solidity",
-          "color": "#AA6746",
-          "size": 4194
-        },
-        {
-          "name": "JavaScript",
-          "color": "#f1e05a",
-          "size": 709
         }
       ],
       "topics": []
@@ -466,20 +366,6 @@
       "topics": []
     },
     {
-      "name": "portfolio",
-      "fullName": "lucianog2000/portfolio",
-      "owner": "lucianog2000",
-      "description": "Personal portfolio",
-      "url": "https://github.com/lucianog2000/portfolio",
-      "homepage": null,
-      "stars": 0,
-      "forks": 0,
-      "updatedAt": "2022-09-21T15:12:43Z",
-      "language": null,
-      "languages": [],
-      "topics": []
-    },
-    {
       "name": "Prueba1",
       "fullName": "lucianog2000/Prueba1",
       "owner": "lucianog2000",
@@ -504,55 +390,61 @@
     {
       "name": "TypeScript",
       "color": "#3178c6",
-      "size": 2649317,
-      "percent": 65.3
+      "size": 1131954,
+      "percent": 51.1
     },
     {
       "name": "JavaScript",
       "color": "#f1e05a",
-      "size": 415322,
-      "percent": 10.2
+      "size": 413323,
+      "percent": 18.7
     },
     {
       "name": "Rust",
       "color": "#dea584",
       "size": 392577,
-      "percent": 9.7
-    },
-    {
-      "name": "Solidity",
-      "color": "#AA6746",
-      "size": 295020,
-      "percent": 7.3
+      "percent": 17.7
     },
     {
       "name": "SCSS",
       "color": "#c6538c",
-      "size": 260781,
-      "percent": 6.4
-    },
-    {
-      "name": "CSS",
-      "color": "#663399",
-      "size": 22176,
-      "percent": 0.5
+      "size": 208178,
+      "percent": 9.4
     },
     {
       "name": "PLpgSQL",
       "color": "#336790",
-      "size": 20340,
+      "size": 23130,
+      "percent": 1
+    },
+    {
+      "name": "Astro",
+      "color": "#ff5a03",
+      "size": 15950,
+      "percent": 0.7
+    },
+    {
+      "name": "CSS",
+      "color": "#663399",
+      "size": 13807,
+      "percent": 0.6
+    },
+    {
+      "name": "Solidity",
+      "color": "#AA6746",
+      "size": 12137,
       "percent": 0.5
     },
     {
       "name": "HTML",
       "color": "#e34c26",
       "size": 3617,
-      "percent": 0.1
+      "percent": 0.2
     },
     {
       "name": "Shell",
       "color": "#89e051",
-      "size": 582,
+      "size": 320,
       "percent": 0
     },
     {

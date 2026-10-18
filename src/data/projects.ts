@@ -112,11 +112,11 @@ const curated: Project[] = [
     name: "EternalVault",
     repo: "lucianog2000/eternalvault",
     tagline: "A digital legacy vault with an AI guardian.",
-    context: "AI-assisted build · 2025",
+    context: "Bolt.new hackathon · 2025",
     year: "2025",
     role: "Solo builder",
     contributions: [
-      "Built in a single day, pairing with Bolt.new as an AI coding tool.",
+      "Built in a single day for a Bolt.new hackathon, pairing with Bolt as an AI coding tool.",
       "Supabase auth, Postgres schema, and SQL migrations for legacy capsules.",
       "Access-key flows for heirs, debugged down to case-sensitivity and FK constraint issues.",
     ],
