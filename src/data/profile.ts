@@ -6,12 +6,10 @@ export const profile = {
   fullName: "Luciano Emanuel García",
   role: "Full-stack developer",
   location: "Córdoba, Argentina",
-  tldr:
-    "I'm a full-stack developer building e-commerce at scale by day and my own products by night. I care about fast interfaces, clean data flows, tests that catch real bugs, and shipping.",
+  tldr: "I'm a full-stack developer building e-commerce at scale by day and my own products by night. I care about fast interfaces, clean data flows, tests that catch real bugs, and shipping.",
   today: {
     company: "Personal (Telecom Argentina)",
-    text:
-      "At Personal, I build the online store at tienda.personal.com.ar: the Remix storefront, the Go services that keep its catalog and search in shape, and a new pricing engine.",
+    text: "At Personal, I build the online store at tienda.personal.com.ar: the Remix storefront, the Go services that keep its catalog and search in shape, and a new pricing engine.",
   },
   yesterday:
     "Web3 hackathons across Ethereum, Polkadot, and Vara: lending protocols, attestation hubs, NFT vehicle records, and in-frame commerce. One of them won its track at ETHGlobal Brussels.",
@@ -108,4 +106,6 @@ export const learning = [
   },
 ];
 
-export const certifications = [{ title: "AWS Cloud Practitioner Essentials", place: "Amazon Web Services", period: "2022" }];
+export const certifications = [
+  { title: "AWS Cloud Practitioner Essentials", place: "Amazon Web Services", period: "2022" },
+];

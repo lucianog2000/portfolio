@@ -14,7 +14,14 @@ const n = radar.axes.length;
 
 const angle = (i: number) => -Math.PI / 2 + (i * 2 * Math.PI) / n;
 const point = (i: number, r: number) => [Math.cos(angle(i)) * r, Math.sin(angle(i)) * r] as const;
-const ring = (r: number) => radar.axes.map((_, i) => point(i, r).map((v) => v.toFixed(1)).join(",")).join(" ");
+const ring = (r: number) =>
+  radar.axes
+    .map((_, i) =>
+      point(i, r)
+        .map((v) => v.toFixed(1))
+        .join(","),
+    )
+    .join(" ");
 
 const axes = radar.axes.map((a, i) => {
   const [x, y] = point(i, (a.level / 5) * R);
@@ -37,39 +44,39 @@ const shape = axes.map((a) => `${a.x.toFixed(1)},${a.y.toFixed(1)}`).join(" ");
     aria-label={`${radar.title}: ${radar.axes.map((a) => `${a.name} ${a.level} of 5`).join(", ")}`}
   >
     <g class="grid" aria-hidden="true">
-      {[1, 2, 3, 4, 5].map((l) => <polygon points={ring((l / 5) * R)} />)}
-      {axes.map((a) => <line x1="0" y1="0" x2={a.ex} y2={a.ey} data-axis={a.key} />)}
+      {[1, 2, 3, 4, 5].map((l) => (
+        <polygon points={ring((l / 5) * R)} />
+      ))}
+      {axes.map((a) => (
+        <line x1="0" y1="0" x2={a.ex} y2={a.ey} data-axis={a.key} />
+      ))}
     </g>
 
     <polygon class="shape" points={shape} />
 
-    {
-      axes.map((a) => (
-        <g class="axis" data-axis={a.key} tabindex="0" aria-label={`${a.name}: level ${a.level} of 5. ${a.evidence}`}>
-          <circle class="hit" cx={a.x} cy={a.y} r="14" />
-          <circle class="dot" cx={a.x} cy={a.y} r="4" />
-          <text x={a.lx} y={a.ly} text-anchor={a.anchor} dominant-baseline={a.baseline}>
-            {a.name}
-          </text>
-        </g>
-      ))
-    }
+    {axes.map((a) => (
+      <g class="axis" data-axis={a.key} tabindex="0" aria-label={`${a.name}: level ${a.level} of 5. ${a.evidence}`}>
+        <circle class="hit" cx={a.x} cy={a.y} r="14" />
+        <circle class="dot" cx={a.x} cy={a.y} r="4" />
+        <text x={a.lx} y={a.ly} text-anchor={a.anchor} dominant-baseline={a.baseline}>
+          {a.name}
+        </text>
+      </g>
+    ))}
   </svg>
 
   <ul class="mt-2">
-    {
-      axes.map((a) => (
-        <li class="row" data-axis={a.key}>
-          <span class="name">{a.name}</span>
-          <span class="level" aria-label={`level ${a.level} of 5`}>
-            {[1, 2, 3, 4, 5].map((l) => (
-              <i class={l <= a.level ? "on" : ""} />
-            ))}
-          </span>
-          <span class="evidence">{a.evidence}</span>
-        </li>
-      ))
-    }
+    {axes.map((a) => (
+      <li class="row" data-axis={a.key}>
+        <span class="name">{a.name}</span>
+        <span class="level" aria-label={`level ${a.level} of 5`}>
+          {[1, 2, 3, 4, 5].map((l) => (
+            <i class={l <= a.level ? "on" : ""} />
+          ))}
+        </span>
+        <span class="evidence">{a.evidence}</span>
+      </li>
+    ))}
   </ul>
 </figure>
 
@@ -173,7 +180,8 @@ const shape = axes.map((a) => `${a.x.toFixed(1)},${a.y.toFixed(1)}`).join(" ");
     if (!key) return;
     document.querySelectorAll(`.radar [data-axis="${CSS.escape(key)}"]`).forEach((el) => el.classList.add("active"));
   };
-  const keyOf = (t: EventTarget | null) => (t instanceof Element ? t.closest<HTMLElement | SVGElement>(".radar [data-axis]")?.dataset.axis ?? null : null);
+  const keyOf = (t: EventTarget | null) =>
+    t instanceof Element ? (t.closest<HTMLElement | SVGElement>(".radar [data-axis]")?.dataset.axis ?? null) : null;
 
   document.addEventListener("pointerover", (e) => setActive(keyOf(e.target)));
   document.addEventListener("focusin", (e) => setActive(keyOf(e.target)));

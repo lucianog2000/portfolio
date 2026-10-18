@@ -9,12 +9,12 @@ const winner = hackathons.find((h) => h.result);
 ---
 
 <Layout>
-  <h1
-    class="font-display text-[clamp(2.4rem,7.5vw,6.5rem)] font-[750] lowercase leading-[0.95] tracking-[-0.045em] text-text"
-  >
+  <h1 class="font-display text-[clamp(2.4rem,7.5vw,6.5rem)] font-[750] lowercase leading-[0.95] tracking-[-0.045em] text-text">
     {profile.name}
   </h1>
-  <p class="mt-3 text-muted">{profile.role} · {profile.location}</p>
+  <p class="mt-3 text-muted">
+    {profile.role} · {profile.location}
+  </p>
 
   <section class="mt-16 grid gap-x-10 gap-y-14 md:grid-cols-3">
     <div class="md:col-span-1">
@@ -25,10 +25,23 @@ const winner = hackathons.find((h) => h.result);
     <div class="md:col-start-2 md:mt-32">
       <h2 class="label">today</h2>
       <p class="mt-3 text-pretty">
-        At <a class="link" href="https://tienda.personal.com.ar" target="_blank" rel="noopener">Personal</a>, I build
-        the online store: the <a class="link" href="/about#storefront">Remix storefront</a>,{" "}
-        the <a class="link" href="/about#catalog">Go services</a> that keep its catalog and search in shape,{" "}
-        and a new <a class="link" href="/about#pricing">pricing engine</a>.
+        At{" "}
+        <a class="link" href="https://tienda.personal.com.ar" target="_blank" rel="noopener">
+          Personal
+        </a>
+        , I build the online store: the{" "}
+        <a class="link" href="/about#storefront">
+          Remix storefront
+        </a>
+        , the{" "}
+        <a class="link" href="/about#catalog">
+          Go services
+        </a>{" "}
+        that keep its catalog and search in shape, and a new{" "}
+        <a class="link" href="/about#pricing">
+          pricing engine
+        </a>
+        .
       </p>
     </div>
 
@@ -36,37 +49,34 @@ const winner = hackathons.find((h) => h.result);
       <h2 class="label">yesterday</h2>
       <p class="mt-3 text-pretty">
         {profile.yesterday}
-        {
-          winner && (
-            <>
-              {" "}See{" "}
-              <a class="link" href={winner.url} target="_blank" rel="noopener">
-                {winner.project}
-              </a>
-              .
-            </>
-          )
-        }
+        {winner && (
+          <>
+            {" "}
+            See{" "}
+            <a class="link" href={winner.url} target="_blank" rel="noopener">
+              {winner.project}
+            </a>
+            .
+          </>
+        )}
       </p>
     </div>
 
     <div class="md:col-span-1 md:-mt-6">
       <h2 class="label">selected work</h2>
       <ol class="mt-3">
-        {
-          projects.map((p, i) => (
-            <li>
-              <a
-                href={`/work#${p.slug}`}
-                class="group flex items-baseline gap-3 border-b border-divider/50 py-1.5 transition-colors hover:text-white"
-              >
-                <span class="text-faint">{String(i + 1).padStart(2, "0")}</span>
-                <span class="group-hover:underline group-hover:decoration-accent-glow">{p.name.toLowerCase()}</span>
-                <span class="ml-auto text-faint">{p.year}</span>
-              </a>
-            </li>
-          ))
-        }
+        {projects.map((p, i) => (
+          <li>
+            <a
+              href={`/work#${p.slug}`}
+              class="group flex items-baseline gap-3 border-b border-divider/50 py-1.5 transition-colors hover:text-white"
+            >
+              <span class="text-faint">{String(i + 1).padStart(2, "0")}</span>
+              <span class="group-hover:underline group-hover:decoration-accent-glow">{p.name.toLowerCase()}</span>
+              <span class="ml-auto text-faint">{p.year}</span>
+            </a>
+          </li>
+        ))}
       </ol>
     </div>
 
@@ -86,9 +96,21 @@ const winner = hackathons.find((h) => h.result);
     <div id="contact" class="scroll-mt-10 md:col-start-3">
       <h2 class="label">contact</h2>
       <ul class="mt-3 space-y-1">
-        <li><a class="link" href={profile.links.linkedin} target="_blank" rel="noopener">linkedin</a></li>
-        <li><a class="link" href={profile.links.github} target="_blank" rel="noopener">github</a></li>
-        <li><a class="link" href={profile.links.x} target="_blank" rel="noopener">x / twitter</a></li>
+        <li>
+          <a class="link" href={profile.links.linkedin} target="_blank" rel="noopener">
+            linkedin
+          </a>
+        </li>
+        <li>
+          <a class="link" href={profile.links.github} target="_blank" rel="noopener">
+            github
+          </a>
+        </li>
+        <li>
+          <a class="link" href={profile.links.x} target="_blank" rel="noopener">
+            x / twitter
+          </a>
+        </li>
       </ul>
     </div>
   </section>

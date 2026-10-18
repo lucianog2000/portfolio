@@ -29,7 +29,12 @@ export const radars: Radar[] = [
       { name: "frontend", level: 5, evidence: "Personal's storefront since 2022: React, Remix, Next.js." },
       { name: "backend", level: 4, evidence: "Go sync services and a new Go pricing engine at Personal." },
       { name: "data & search", level: 4, evidence: "Postgres catalog and Typesense search at Personal." },
-      { name: "testing", level: 4, evidence: "Unit and e2e tests in TypeScript and Go at Personal; CI with e2e, a11y, and Lighthouse on my products." },
+      {
+        name: "testing",
+        level: 4,
+        evidence:
+          "Unit and e2e tests in TypeScript and Go at Personal; CI with e2e, a11y, and Lighthouse on my products.",
+      },
       { name: "security", level: 1, evidence: "Learning web security with PortSwigger Web Security Academy." },
       { name: "smart contracts", level: 3, evidence: "Rust on Vara (vStreet, SPBonding) and Solidity (AutoPassport)." },
     ],
@@ -38,11 +43,32 @@ export const radars: Radar[] = [
     id: "soft",
     title: "soft skills",
     axes: [
-      { name: "product", level: 4, evidence: "Functional refinements at Personal; vision docs and ADRs for CarsWatch." },
-      { name: "leadership", level: 4, evidence: "Co-leading the pricing engine at Personal; led the AutoPassport and vStreet teams." },
-      { name: "mentoring", level: 4, evidence: "I volunteer to onboard new teammates and help anyone stuck. When I don't know the answer, I know whose door to knock on." },
-      { name: "collaboration", level: 4, evidence: "155 merged merge requests in team at Personal; four team hackathons." },
-      { name: "agile", level: 4, evidence: "Scrum and ticket refinement at Personal; ran Agile onboarding for vStreet." },
+      {
+        name: "product",
+        level: 4,
+        evidence: "Functional refinements at Personal; vision docs and ADRs for CarsWatch.",
+      },
+      {
+        name: "leadership",
+        level: 4,
+        evidence: "Co-leading the pricing engine at Personal; led the AutoPassport and vStreet teams.",
+      },
+      {
+        name: "mentoring",
+        level: 4,
+        evidence:
+          "I volunteer to onboard new teammates and help anyone stuck. When I don't know the answer, I know whose door to knock on.",
+      },
+      {
+        name: "collaboration",
+        level: 4,
+        evidence: "155 merged merge requests in team at Personal; four team hackathons.",
+      },
+      {
+        name: "agile",
+        level: 4,
+        evidence: "Scrum and ticket refinement at Personal; ran Agile onboarding for vStreet.",
+      },
       { name: "writing", level: 3, evidence: "ADRs, READMEs, and product docs for my own projects." },
     ],
   },
