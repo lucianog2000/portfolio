@@ -3,6 +3,7 @@
 Seguí estas reglas en todo el código, los docs y los tickets. No dependen de ninguna tecnología ni arquitectura en particular.
 
 ## 0. El stack y la arquitectura son parte de la solución
+
 - No arranques con un stack ni una arquitectura por costumbre. Elegirlos es la primera decisión de diseño.
 - Antes de escribir código, entendé el problema: usuarios, plataformas (web, mobile, desktop, CLI…), volumen, equipo, presupuesto, hosting, restricciones legales y cómo puede crecer.
 - Proponé 2 o 3 opciones con sus pros y contras. Elegí una con un motivo concreto y dejala escrita en un registro de decisiones (ADR). Tiene que incluir la estructura de módulos y cómo se aíslan el dominio y las dependencias externas.
@@ -11,6 +12,7 @@ Seguí estas reglas en todo el código, los docs y los tickets. No dependen de n
 - Antes de usar la API de un framework o una librería, leé la documentación de la versión instalada. No confíes en lo que recordás.
 
 ## 1. Proceso
+
 - **Sin ticket no hay cambio.** Todo cambio (código, docs, CI o infraestructura) tiene un ticket en el backlog del proyecto. Si no existe, se crea antes de empezar, con el siguiente ID libre, y se pasa a "en curso".
 - **Primero diseño, después código.** Toda pantalla o feature con UI se diseña antes de implementarse, en la herramienta de diseño del proyecto.
 - **Antes de una construcción grande, proponé el plan** y esperá la aprobación.
@@ -18,6 +20,7 @@ Seguí estas reglas en todo el código, los docs y los tickets. No dependen de n
 - **Definition of Done:** el ticket se cierra solo cuando el cambio está mergeado, desplegado y verificado, y cumple todas las reglas de abajo.
 
 ## 2. Tests
+
 - **TDD siempre:** rojo → verde → refactor. El test se commitea junto con el código que lo hace pasar.
 - **Spikes:** las pruebas técnicas descartables van en ramas aparte que nunca se mergean. Lo aprendido se reimplementa con TDD.
 - **Pirámide de tests:**
@@ -28,6 +31,7 @@ Seguí estas reglas en todo el código, los docs y los tickets. No dependen de n
 - **Si hay frontend, E2E con screenshots en al menos dos tamaños: mobile y desktop.** Se generan en un entorno fijo (fuentes fijas, animaciones apagadas) y se suben como artifact solo si el test falla.
 
 ## 3. Diseño e interfaz
+
 - **Mobile first, pero el desktop no se ata al mobile.** Se diseña primero para mobile, y toda pantalla tiene además una composición desktop propia que aprovecha el ancho (columnas, paneles laterales, tablas). No vale la columna de mobile estirada ni centrada.
 - **Responsive real:** definí breakpoints por necesidad del contenido, no por dispositivo. Un componente puede cambiar de forma entre tamaños (por ejemplo, una tabla que pasa a tarjetas).
 - **Design tokens desde el día 1:** colores, espaciados, tipografía y radios. Nada de valores sueltos.
@@ -40,6 +44,7 @@ Seguí estas reglas en todo el código, los docs y los tickets. No dependen de n
 - **Contenido pensado para quien llega por primera vez:** la página principal explica el producto. No muestra datos específicos fuera de contexto.
 
 ## 4. Idioma e internacionalización desde el día 1
+
 - **El código, los identificadores y las claves de traducción van en inglés.** Elegí y documentá el idioma de los docs y del producto.
 - **Ningún texto visible se escribe directo en el código:** se usan claves de traducción con soporte de plurales y género. Si se puede, se controla con un linter.
 - **Unidades, moneda, fechas y números:**
@@ -50,6 +55,7 @@ Seguí estas reglas en todo el código, los docs y los tickets. No dependen de n
 - **Nunca inventes datos de dominio** (técnicos, legales, médicos, financieros…). Si falta un dato, pedilo o dejalo pendiente.
 
 ## 5. Código y arquitectura (cualquiera sea la elegida)
+
 - **Sin comentarios de "qué hace":** se resuelve con nombres claros y funciones chicas. El porqué va en los ADRs, los commits y los PRs. Única excepción: una línea con un link cuando algo contraintuitivo es obligatorio.
 - **El dominio no depende de frameworks,** de la base de datos ni de proveedores externos: se accede a ellos a través de interfaces propias.
 - **Los módulos se comunican por contratos públicos** o eventos, nunca por los datos internos de otro módulo.
@@ -61,9 +67,10 @@ Seguí estas reglas en todo el código, los docs y los tickets. No dependen de n
   - que esté mantenida y tenga una licencia compatible;
   - que su tamaño sea razonable;
   - que no se pueda resolver con poco código propio.
-  Las centrales se deciden en un ADR.
+    Las centrales se deciden en un ADR.
 
 ## 6. Seguridad, privacidad y observabilidad
+
 - **Cero secretos en el repo:** se usa un archivo de ejemplo con valores falsos, y los secretos reales van al gestor del entorno.
 - **Mínimo privilegio** en servicios, tokens y roles.
 - **Los datos sensibles son privados por defecto.** Exponerlos es siempre una acción explícita del usuario.
@@ -72,6 +79,7 @@ Seguí estas reglas en todo el código, los docs y los tickets. No dependen de n
 - **Logs estructurados con un ID de correlación por request,** monitoreo de errores en cliente y servidor, y cero datos personales en los logs.
 
 ## 7. Git, PRs y CI
+
 - **Ramas cortas desde la principal,** con el ID del ticket en el nombre.
 - **Commits con Conventional Commits.**
 - **PRs chicos** (menos de unas 400 líneas), uno por ticket. La descripción explica el porqué.
@@ -80,6 +88,7 @@ Seguí estas reglas en todo el código, los docs y los tickets. No dependen de n
 - **[Opcional, según el equipo] Sin revisión humana:** abrí el PR, esperá el CI y mergealo apenas esté en verde. Si falla, arreglalo antes. Después verificá producción y cerrá el ticket.
 
 ## 8. Memoria y documentación
+
 - **Todo lo que otra persona necesite saber va al repo:** ADRs, reglas y docs.
 - **Cambiar estas reglas requiere un ADR.**
 - **Si el usuario te corrige o fija una preferencia,** proponé sumarla a estas reglas.

@@ -41,29 +41,25 @@ const isActive = (href: string) => (href === "/" ? path === "/" : path.startsWit
       <slot />
     </main>
 
-    <nav
-      aria-label="Primary"
-      class="fixed inset-x-0 bottom-5 z-30 flex justify-center px-4"
-      transition:persist
-    >
+    <nav aria-label="Primary" class="fixed inset-x-0 bottom-5 z-30 flex justify-center px-4" transition:persist>
       <div class="flex gap-1 rounded-[40px] bg-surface/90 p-1.5 shadow-[0_10px_40px_rgb(0_0_0/0.5)] ring-1 ring-white/5 backdrop-blur">
-        {
-          nav.map((item) => (
-            <a
-              href={item.href}
-              data-nav={item.href}
-              aria-current={isActive(item.href) ? "page" : undefined}
-              class="flex h-11 min-w-[64px] items-center justify-center rounded-[36px] px-4 text-[11px] tracking-[0.1em] text-muted transition-colors hover:text-text aria-[current=page]:bg-accent aria-[current=page]:text-white aria-[current=page]:shadow-[0_0_24px_rgb(37_99_235/0.55)] sm:min-w-[84px]"
-            >
-              {item.label}
-            </a>
-          ))
-        }
+        {nav.map((item) => (
+          <a
+            href={item.href}
+            data-nav={item.href}
+            aria-current={isActive(item.href) ? "page" : undefined}
+            class="flex h-11 min-w-[64px] items-center justify-center rounded-[36px] px-4 text-[11px] tracking-[0.1em] text-muted transition-colors hover:text-text aria-[current=page]:bg-accent aria-[current=page]:text-white aria-[current=page]:shadow-[0_0_24px_rgb(37_99_235/0.55)] sm:min-w-[84px]"
+          >
+            {item.label}
+          </a>
+        ))}
       </div>
     </nav>
 
     <footer class="relative z-10 mx-auto flex max-w-[1500px] flex-col gap-1 border-t border-divider px-5 py-5 pb-24 text-[11px] text-faint sm:flex-row sm:justify-between sm:px-10 sm:pb-5">
-      <span>© {new Date().getFullYear()} {profile.fullName}</span>
+      <span>
+        © {new Date().getFullYear()} {profile.fullName}
+      </span>
       <span>Built with Astro · data from GitHub &amp; LinkedIn</span>
     </footer>
 
@@ -72,7 +68,7 @@ const isActive = (href: string) => (href === "/" ? path === "/" : path.startsWit
       document.addEventListener("astro:page-load", () => {
         const path = location.pathname.replace(/\/$/, "") || "/";
         document.querySelectorAll<HTMLAnchorElement>("[data-nav]").forEach((a) => {
-          const href = a.dataset.nav!;
+          const href = a.dataset.nav ?? "";
           const active = href === "/" ? path === "/" : !href.includes("#") && path.startsWith(href);
           if (active) a.setAttribute("aria-current", "page");
           else a.removeAttribute("aria-current");

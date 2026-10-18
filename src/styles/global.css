@@ -48,7 +48,10 @@
     radial-gradient(ellipse 60% 50% at 75% 20%, rgb(37 99 235 / 0.07), transparent 70%),
     radial-gradient(ellipse 50% 60% at 15% 85%, rgb(251 138 28 / 0.045), transparent 70%),
     radial-gradient(rgb(235 238 239 / 0.07) 1px, transparent 1.2px);
-  background-size: 100% 100%, 100% 100%, 5px 5px;
+  background-size:
+    100% 100%,
+    100% 100%,
+    5px 5px;
 }
 .backdrop::after {
   content: "";
@@ -59,15 +62,29 @@
   animation: grain 1.2s steps(6) infinite;
 }
 @keyframes grain {
-  0% { transform: translate(0, 0); }
-  20% { transform: translate(-3%, 2%); }
-  40% { transform: translate(2%, -3%); }
-  60% { transform: translate(-2%, -1%); }
-  80% { transform: translate(3%, 3%); }
-  100% { transform: translate(0, 0); }
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(-3%, 2%);
+  }
+  40% {
+    transform: translate(2%, -3%);
+  }
+  60% {
+    transform: translate(-2%, -1%);
+  }
+  80% {
+    transform: translate(3%, 3%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }
 @media (prefers-reduced-motion: reduce) {
-  .backdrop::after { animation: none; }
+  .backdrop::after {
+    animation: none;
+  }
 }
 
 /* Section label: lowercase mono caption with a hairline underneath. */
@@ -84,5 +101,9 @@
   scrollbar-width: none;
   scroll-snap-type: x mandatory;
 }
-.strip::-webkit-scrollbar { display: none; }
-.strip > * { scroll-snap-align: start; }
+.strip::-webkit-scrollbar {
+  display: none;
+}
+.strip > * {
+  scroll-snap-align: start;
+}

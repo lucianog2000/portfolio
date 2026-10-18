@@ -10,7 +10,9 @@ const OUT = new URL("../src/data/github.json", import.meta.url);
 function getToken() {
   if (process.env.GITHUB_TOKEN) return process.env.GITHUB_TOKEN;
   try {
-    return execSync("gh auth token", { stdio: ["ignore", "pipe", "ignore"] }).toString().trim();
+    return execSync("gh auth token", { stdio: ["ignore", "pipe", "ignore"] })
+      .toString()
+      .trim();
   } catch {
     return null;
   }
