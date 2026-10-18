@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { experience, hackathons, education, certifications, learning } from "../data/profile";
+import { radars, scale } from "../data/skills";
+import Radar from "../components/Radar.astro";
 ---
 
 <Layout title="About">
@@ -57,6 +59,25 @@ import { experience, hackathons, education, certifications, learning } from "../
       </section>
     ))
   }
+
+  <section class="mt-20">
+    <div class="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2">
+      <h2 class="font-display text-[clamp(1.4rem,3vw,2.4rem)] font-[650] lowercase leading-tight tracking-[-0.03em]">
+        skills, with receipts
+      </h2>
+      <p class="text-[11px] text-faint">
+        levels follow evidence, not opinion ·{" "}
+        {scale.map((s, i) => (
+          <span>
+            <span class="text-muted">{s.level}</span> {s.label}{i < scale.length - 1 ? " · " : ""}
+          </span>
+        ))}
+      </p>
+    </div>
+    <div class="mt-8 grid gap-14 lg:grid-cols-2">
+      {radars.map((r) => <Radar radar={r} />)}
+    </div>
+  </section>
 
   <section class="mt-20 grid gap-10 lg:grid-cols-3">
     <div class="lg:col-span-2">

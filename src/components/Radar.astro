@@ -1,0 +1,181 @@
+---
+// Radar chart rendered to static SVG at build time. Hover, focus, or tap an axis
+// (or its row in the list) to highlight both; the list doubles as the table view.
+import type { Radar } from "../data/skills";
+
+interface Props {
+  radar: Radar;
+}
+
+const { radar } = Astro.props;
+const R = 100; // radius of level 5
+const LABEL_R = R + 16;
+const n = radar.axes.length;
+
+const angle = (i: number) => -Math.PI / 2 + (i * 2 * Math.PI) / n;
+const point = (i: number, r: number) => [Math.cos(angle(i)) * r, Math.sin(angle(i)) * r] as const;
+const ring = (r: number) => radar.axes.map((_, i) => point(i, r).map((v) => v.toFixed(1)).join(",")).join(" ");
+
+const axes = radar.axes.map((a, i) => {
+  const [x, y] = point(i, (a.level / 5) * R);
+  const [lx, ly] = point(i, LABEL_R);
+  const [ex, ey] = point(i, R);
+  const anchor = Math.abs(lx) < 1 ? "middle" : lx > 0 ? "start" : "end";
+  const baseline = Math.abs(lx) < 1 ? (ly < 0 ? "auto" : "hanging") : "middle";
+  return { ...a, x, y, lx, ly, ex, ey, anchor, baseline, key: `${radar.id}-${i}` };
+});
+const shape = axes.map((a) => `${a.x.toFixed(1)},${a.y.toFixed(1)}`).join(" ");
+---
+
+<figure class="radar" data-radar={radar.id}>
+  <figcaption class="label">{radar.title}</figcaption>
+
+  <svg
+    viewBox="-210 -132 420 264"
+    class="mt-4 w-full max-w-[460px] overflow-visible"
+    role="img"
+    aria-label={`${radar.title}: ${radar.axes.map((a) => `${a.name} ${a.level} of 5`).join(", ")}`}
+  >
+    <g class="grid" aria-hidden="true">
+      {[1, 2, 3, 4, 5].map((l) => <polygon points={ring((l / 5) * R)} />)}
+      {axes.map((a) => <line x1="0" y1="0" x2={a.ex} y2={a.ey} data-axis={a.key} />)}
+    </g>
+
+    <polygon class="shape" points={shape} />
+
+    {
+      axes.map((a) => (
+        <g class="axis" data-axis={a.key} tabindex="0" aria-label={`${a.name}: level ${a.level} of 5. ${a.evidence}`}>
+          <circle class="hit" cx={a.x} cy={a.y} r="14" />
+          <circle class="dot" cx={a.x} cy={a.y} r="4" />
+          <text x={a.lx} y={a.ly} text-anchor={a.anchor} dominant-baseline={a.baseline}>
+            {a.name}
+          </text>
+        </g>
+      ))
+    }
+  </svg>
+
+  <ul class="mt-2">
+    {
+      axes.map((a) => (
+        <li class="row" data-axis={a.key}>
+          <span class="name">{a.name}</span>
+          <span class="level" aria-label={`level ${a.level} of 5`}>
+            {[1, 2, 3, 4, 5].map((l) => (
+              <i class={l <= a.level ? "on" : ""} />
+            ))}
+          </span>
+          <span class="evidence">{a.evidence}</span>
+        </li>
+      ))
+    }
+  </ul>
+</figure>
+
+<style>
+  .grid polygon,
+  .grid line {
+    fill: none;
+    stroke: rgb(235 238 239 / 0.1);
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+  }
+  .grid line.active {
+    stroke: rgb(235 238 239 / 0.35);
+  }
+  .shape {
+    fill: rgb(79 134 247 / 0.16);
+    stroke: #4f86f7;
+    stroke-width: 2;
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+  }
+  .axis {
+    cursor: pointer;
+    outline: none;
+  }
+  .axis .hit {
+    fill: transparent;
+  }
+  .axis .dot {
+    fill: #4f86f7;
+    stroke: var(--color-bg);
+    stroke-width: 2;
+    transform-box: fill-box;
+    transform-origin: center;
+    transition: transform 0.15s ease;
+  }
+  .axis text {
+    fill: var(--color-muted);
+    font-size: 13.5px;
+    transition: fill 0.15s ease;
+  }
+  .axis.active .dot {
+    transform: scale(1.5);
+  }
+  .axis.active text,
+  .axis:focus-visible text {
+    fill: var(--color-text);
+  }
+  .axis:focus-visible .dot {
+    stroke: var(--color-text);
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 7.5rem auto 1fr;
+    gap: 0.75rem;
+    align-items: baseline;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgb(235 238 239 / 0.07);
+    transition: color 0.15s ease;
+    cursor: default;
+  }
+  .row .name {
+    color: var(--color-muted);
+  }
+  .row .evidence {
+    color: var(--color-faint);
+  }
+  .row.active .name,
+  .row.active .evidence {
+    color: var(--color-text);
+  }
+  .level {
+    display: inline-flex;
+    gap: 3px;
+  }
+  .level i {
+    width: 6px;
+    height: 6px;
+    border-radius: 1px;
+    background: rgb(235 238 239 / 0.12);
+  }
+  .level i.on {
+    background: #4f86f7;
+  }
+  @media (max-width: 480px) {
+    .row {
+      grid-template-columns: 1fr auto;
+      gap: 0.25rem 0.75rem;
+    }
+    .row .evidence {
+      grid-column: 1 / -1;
+    }
+  }
+</style>
+
+<script>
+  // Delegated once on document, so it survives client-side navigation.
+  const setActive = (key: string | null) => {
+    document.querySelectorAll(".radar .active").forEach((el) => el.classList.remove("active"));
+    if (!key) return;
+    document.querySelectorAll(`.radar [data-axis="${CSS.escape(key)}"]`).forEach((el) => el.classList.add("active"));
+  };
+  const keyOf = (t: EventTarget | null) => (t instanceof Element ? t.closest<HTMLElement | SVGElement>(".radar [data-axis]")?.dataset.axis ?? null : null);
+
+  document.addEventListener("pointerover", (e) => setActive(keyOf(e.target)));
+  document.addEventListener("focusin", (e) => setActive(keyOf(e.target)));
+  document.addEventListener("focusout", () => setActive(null));
+</script>
