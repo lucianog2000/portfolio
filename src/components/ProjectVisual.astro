@@ -1,6 +1,6 @@
 ---
 // Visual for a project: the live-demo screenshot when there is one,
-// otherwise a terminal-style card built from real repo data.
+// otherwise a terminal-style card built from real repo data (or just the role, when there is no repo).
 import type { projects } from "../data/projects";
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
 }
 
 const { project: p } = Astro.props;
-const repoName = p.repo.split("/")[1];
+const repoName = p.repo?.split("/")[1] ?? p.slug;
 ---
 
 {p.image ? (
@@ -25,15 +25,19 @@ const repoName = p.repo.split("/")[1];
     </div>
     <div class="flex flex-1 flex-col justify-between p-6 sm:p-8">
       <div class="space-y-1.5 text-[12px]">
-        <p>
-          <span class="text-accent-glow">$</span> cat STATS
-        </p>
-        {p.stats.map((s) => (
-          <p class="text-muted">
-            <span class="inline-block w-16 text-right text-phosphor">{s.value}</span> {s.label}
-          </p>
-        ))}
-        <p class="pt-3">
+        {p.stats.length > 0 && (
+          <>
+            <p>
+              <span class="text-accent-glow">$</span> cat STATS
+            </p>
+            {p.stats.map((s) => (
+              <p class="text-muted">
+                <span class="inline-block w-16 text-right text-phosphor">{s.value}</span> {s.label}
+              </p>
+            ))}
+          </>
+        )}
+        <p class:list={[p.stats.length > 0 && "pt-3"]}>
           <span class="text-accent-glow">$</span> cat ROLE
         </p>
         <p class="text-muted">{p.role}</p>

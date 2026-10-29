@@ -5,7 +5,7 @@ import github from "./github.json";
 export interface Project {
   slug: string;
   name: string;
-  repo: string; // owner/name on GitHub
+  repo?: string; // owner/name on GitHub; omitted when there is no repo worth showing
   tagline: string;
   context: string;
   year: string;
@@ -71,7 +71,7 @@ const curated: Project[] = [
     name: "vStreet",
     repo: "vstreet-defi/vstreet",
     tagline: "Lending platform MVP on Vara Network.",
-    context: "Team product · 2024 — 2025",
+    context: "Gear Foundation grant · 2024 — 2025",
     year: "2024",
     role: "Product lead & full-stack developer",
     contributions: [
@@ -110,6 +110,24 @@ const curated: Project[] = [
       { value: "5", label: "builders" },
     ],
     links: [{ label: "code", url: "https://github.com/PsyLabsWeb3/Polkadot-Attestations" }],
+  },
+  {
+    slug: "rotam",
+    name: "Rotam",
+    tagline: "Vehicle tokenization, across chains.",
+    context: "Team program · Sep — Dec 2023",
+    year: "2023",
+    role: "Technical lead",
+    contributions: [
+      "Multinational team where I was the engineer with hands-on software experience, next to UX, business, and legal profiles.",
+      "Wrote the Solidity smart contracts, with NFTs on RMRK and metadata on IPFS.",
+      "Connected the contracts to the frontend with Ethers.js.",
+      "Integrated Axelar for cross-chain messaging.",
+      "Took over an early codebase and spent a good part of the project refactoring it and fixing bugs.",
+    ],
+    stack: ["Solidity", "Hardhat", "Ethers.js", "RMRK", "IPFS", "Axelar"],
+    stats: [],
+    links: [],
   },
   {
     slug: "autopassport",
@@ -181,7 +199,7 @@ const ghRepos = new Map<string, GhRepo>(
 );
 
 export const projects = curated.map((p) => {
-  const gh = ghRepos.get(p.repo.toLowerCase());
+  const gh = p.repo ? ghRepos.get(p.repo.toLowerCase()) : undefined;
   const total = gh?.languages.reduce((a, l) => a + l.size, 0) ?? 0;
   const languages =
     gh?.languages
