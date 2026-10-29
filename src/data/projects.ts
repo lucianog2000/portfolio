@@ -115,7 +115,7 @@ const curated: Project[] = [
     slug: "rotam",
     name: "Rotam",
     tagline: "Vehicle tokenization, across chains.",
-    context: "Team program · Sep — Dec 2023",
+    context: "AngelHack Polkadot Relayers incubator · Sep — Dec 2023",
     year: "2023",
     role: "Technical lead",
     contributions: [
@@ -127,7 +127,12 @@ const curated: Project[] = [
     ],
     stack: ["Solidity", "Hardhat", "Ethers.js", "RMRK", "IPFS", "Axelar"],
     stats: [],
-    links: [],
+    links: [
+      {
+        label: "polkadot forum",
+        url: "https://forum.polkadot.network/t/decentralized-futures-rotam-a-trustless-vehicle-marketplace-ecosystem/6391",
+      },
+    ],
   },
   {
     slug: "autopassport",

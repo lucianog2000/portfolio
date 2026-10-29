@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-29T17:30:58.905Z",
+  "fetchedAt": "2026-10-29T17:36:15.429Z",
   "profile": {
     "name": "Luchex",
     "login": "lucianog2000",
@@ -225,18 +225,18 @@
       "homepage": "https://luciano-garcia.vercel.app",
       "stars": 0,
       "forks": 0,
-      "updatedAt": "2026-10-29T14:33:29Z",
+      "updatedAt": "2026-10-29T17:32:55Z",
       "language": "Astro",
       "languages": [
         {
           "name": "Astro",
           "color": "#ff5a03",
-          "size": 28105
+          "size": 28330
         },
         {
           "name": "TypeScript",
           "color": "#3178c6",
-          "size": 24034
+          "size": 24086
         },
         {
           "name": "JavaScript",
@@ -390,7 +390,7 @@
     {
       "name": "TypeScript",
       "color": "#3178c6",
-      "size": 1145866,
+      "size": 1145918,
       "percent": 51.1
     },
     {
@@ -414,7 +414,7 @@
     {
       "name": "Astro",
       "color": "#ff5a03",
-      "size": 28105,
+      "size": 28330,
       "percent": 1.3
     },
     {
