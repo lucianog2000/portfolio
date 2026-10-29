@@ -12,7 +12,7 @@ export const profile = {
     text: "At Personal, I build the online store: the Remix storefront, the Go services that keep its catalog and search in shape, and, these days, a pricing engine built test-first.",
   },
   yesterday:
-    "Building in web3 since 2023: Rotam, a cross-chain vehicle tokenization protocol; vStreet, a lending MVP funded by a Gear Foundation grant; and hackathons across Ethereum, Base, Polkadot, and Vara, one of which won Best DApp on Vara Network at ETHGlobal Brussels.",
+    "Building in web3 since 2023: Rotam, a cross-chain vehicle tokenization protocol; vStreet, a DeFi lending hub funded by a Vara Network grant; and hackathons across Ethereum, Base, Polkadot, and Vara, one of which won Best DApp on Vara Network at ETHGlobal Brussels.",
   links: {
     github: "https://github.com/lucianog2000",
     linkedin: "https://www.linkedin.com/in/lucianog2000/",
@@ -48,7 +48,7 @@ export const experience = [
       },
       {
         area: "pricing",
-        text: "Building a Go microservice that centralizes price calculation for a specific client, logic each team solves on its own today. Test-first, with high unit and e2e coverage; stress testing comes before production.",
+        text: "Building a Go microservice that centralizes client-specific price calculation, replacing logic each team implements on its own today. Test-first, with high unit and e2e coverage; stress testing comes before production.",
       },
       {
         area: "analytics",
@@ -75,13 +75,13 @@ export const hackathons = [
     name: "ETHGlobal Brussels 2024",
     project: "SPBonding",
     featured: true,
-    result: "Winner · Best DApp on Vara Network",
-    text: "Permissionless bonding protocol on Vara: users buy pTokens at a discount with vesting. I wrote part of the Rust smart contract logic, working remotely.",
+    result: "Prize winner · Best DApp on Vara Network",
+    text: "Permissionless bonding protocol on Vara: users buy pTokens at a discount with vesting. I wrote part of the Rust smart-program logic, working remotely.",
     url: "https://ethglobal.com/showcase/spbonding-pcs09",
   },
   {
     name: "Polkadot Hackathon Bangkok 2024",
-    project: "Polkattest",
+    project: "PolkAttest",
     text: "Attestation hub for the Polkadot ecosystem.",
     url: "https://github.com/PsyLabsWeb3/Polkadot-Attestations",
   },
