@@ -9,10 +9,10 @@ export const profile = {
   tldr: "I'm a full-stack developer building e-commerce at scale by day and my own products by night. I care about fast interfaces, clean data flows, tests that catch real bugs, and shipping.",
   today: {
     company: "Personal (Telecom Argentina)",
-    text: "At Personal, I build the online store at tienda.personal.com.ar: the Remix storefront, the Go services that keep its catalog and search in shape, and a new pricing engine.",
+    text: "At Personal, I build the online store: the Remix storefront, the Go services that keep its catalog and search in shape, and, these days, a pricing engine built test-first.",
   },
   yesterday:
-    "Web3 hackathons across Ethereum, Polkadot, and Vara: lending protocols, attestation hubs, NFT vehicle records, and in-frame commerce. One of them won its track at ETHGlobal Brussels.",
+    "Web3 since 2023: a vehicle tokenization protocol at Rotam, then hackathons across Ethereum, Base, Polkadot, and Vara. One of them won Best DApp on Vara Network at ETHGlobal Brussels.",
   links: {
     github: "https://github.com/lucianog2000",
     linkedin: "https://www.linkedin.com/in/lucianog2000/",
@@ -48,7 +48,7 @@ export const experience = [
       },
       {
         area: "pricing",
-        text: "A new Go pricing microservice: billing-cycle pricing, additional discounts, and simulation of plan changes, aligned with TM Forum vocabulary.",
+        text: "Building a Go microservice that centralizes price calculation for a specific client, logic each team solves on its own today. Test-first, with high unit and e2e coverage; stress testing comes before production.",
       },
       {
         area: "analytics",
@@ -61,14 +61,41 @@ export const experience = [
     ],
     stack: ["Remix", "React", "TypeScript", "Vanilla Extract", "Go", "Postgres", "Typesense", "Next.js", "Playwright"],
   },
+  {
+    company: "Rotam",
+    url: null,
+    role: "Technical lead",
+    period: "Sep 2023 — Dec 2023",
+    summary:
+      "Vehicle tokenization protocol, built with a multinational team where I was the engineer with hands-on software experience, working next to UX, business, and legal profiles.",
+    stats: [],
+    highlights: [
+      { area: "contracts", text: "Wrote the Solidity smart contracts, with NFTs on RMRK and metadata on IPFS." },
+      { area: "frontend", text: "Connected the contracts to the frontend with Ethers.js." },
+      { area: "cross-chain", text: "Integrated Axelar for cross-chain messaging." },
+      {
+        area: "codebase",
+        text: "Took over an early codebase and spent a good part of the project refactoring it and fixing bugs.",
+      },
+    ],
+    stack: ["Solidity", "Hardhat", "Ethers.js", "RMRK", "IPFS", "Axelar"],
+  },
 ];
 
 export const hackathons = [
   {
+    name: "Personal internal CTF · Jun 2026",
+    project: "Capture The Flag",
+    result: "1st place · team of 5",
+    text: "Internal security competition with 50+ developers.",
+    url: "https://www.linkedin.com/feed/update/urn:li:activity:7470515322886881281/",
+  },
+  {
     name: "ETHGlobal Brussels 2024",
     project: "SPBonding",
-    result: "Winner · Vara track",
-    text: "Permissionless bonding protocol on Vara: users buy pTokens at a discount with vesting, building a treasury for sustainable growth.",
+    featured: true,
+    result: "Winner · Best DApp on Vara Network",
+    text: "Permissionless bonding protocol on Vara: users buy pTokens at a discount with vesting. I wrote part of the Rust smart contract logic, working remotely.",
     url: "https://ethglobal.com/showcase/spbonding-pcs09",
   },
   {
@@ -78,9 +105,9 @@ export const hackathons = [
     url: "https://github.com/PsyLabsWeb3/Polkadot-Attestations",
   },
   {
-    name: "Onchain Summer Buildathon 2024",
+    name: "Base Onchain Summer Buildathon · Jul 2024",
     project: "Warpify",
-    text: "Shopify checkout inside a Farcaster frame.",
+    text: "Commerce track, team of four from Psy Labs: Shopify checkout inside a Farcaster frame.",
     url: "https://devfolio.co/projects/warpify-53dd",
   },
   {
@@ -104,6 +131,16 @@ export const learning = [
     url: "https://portswigger.net/web-security",
     text: "Exploring AppSec, smart contract security, and pentesting.",
   },
+];
+
+export const onchain = {
+  title: "on-chain since 2015",
+  text: "My first bitcoins came from faucets in 2015. Since then I've used DeFi protocols and early cross-chain bridges, mined ETH with my own GPU, and played NFT games, long before building any of it.",
+};
+
+export const languages = [
+  { name: "Spanish", level: "native" },
+  { name: "English", level: "working proficiency, strongest in writing" },
 ];
 
 export const certifications = [

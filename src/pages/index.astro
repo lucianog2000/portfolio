@@ -5,7 +5,7 @@ import { projects } from "../data/projects";
 import github from "../data/github.json";
 
 const topLanguages = github.languages.filter((l) => l.percent >= 1).slice(0, 6);
-const winner = hackathons.find((h) => h.result);
+const winner = hackathons.find((h) => "featured" in h && h.featured);
 ---
 
 <Layout>
@@ -37,11 +37,11 @@ const winner = hackathons.find((h) => h.result);
         <a class="link" href="/about#catalog">
           Go services
         </a>{" "}
-        that keep its catalog and search in shape, and a new{" "}
+        that keep its catalog and search in shape, and, these days, a{" "}
         <a class="link" href="/about#pricing">
           pricing engine
-        </a>
-        .
+        </a>{" "}
+        built test-first.
       </p>
     </div>
 
