@@ -27,7 +27,7 @@ export const radars: Radar[] = [
     title: "hard skills",
     axes: [
       { name: "frontend", level: 5, evidence: "Personal's storefront since 2022: React, Remix, Next.js." },
-      { name: "backend", level: 4, evidence: "Go sync services and a new Go pricing engine at Personal." },
+      { name: "backend", level: 4, evidence: "Go sync services at Personal, and a pricing engine in the works." },
       { name: "data & search", level: 4, evidence: "Postgres catalog and Typesense search at Personal." },
       {
         name: "testing",
@@ -35,8 +35,16 @@ export const radars: Radar[] = [
         evidence:
           "Unit and e2e tests in TypeScript and Go at Personal; CI with e2e, a11y, and Lighthouse on my products.",
       },
-      { name: "security", level: 1, evidence: "Learning web security with PortSwigger Web Security Academy." },
-      { name: "smart contracts", level: 3, evidence: "Rust on Vara (vStreet, SPBonding) and Solidity (AutoPassport)." },
+      {
+        name: "security",
+        level: 1,
+        evidence: "Learning with PortSwigger Web Security Academy; 1st place with my team in Personal's internal CTF.",
+      },
+      {
+        name: "smart contracts",
+        level: 3,
+        evidence: "Solidity at Rotam (RMRK NFTs, Axelar) and AutoPassport; Rust on Vara (vStreet, SPBonding).",
+      },
     ],
   },
   {
