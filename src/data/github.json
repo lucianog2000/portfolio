@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-10-29T17:36:15.429Z",
+  "fetchedAt": "2026-10-29T18:02:42.629Z",
   "profile": {
     "name": "Luchex",
     "login": "lucianog2000",
-    "bio": "Full-stack developer · Remix, Go & Web3 · ETHGlobal Brussels winner (Vara track)",
+    "bio": "Full-stack Engineer · TypeScript, React/Remix, Go, Rust, Solidity · ETHGlobal Brussels prize winner",
     "location": "Córdoba, Argentina",
     "avatarUrl": "https://avatars.githubusercontent.com/u/40703841?u=ff6334fe2799e56f3f59a353984278d00cf0e1db&v=4",
     "url": "https://github.com/lucianog2000",
@@ -225,7 +225,7 @@
       "homepage": "https://luciano-garcia.vercel.app",
       "stars": 0,
       "forks": 0,
-      "updatedAt": "2026-10-29T17:32:55Z",
+      "updatedAt": "2026-10-29T17:38:06Z",
       "language": "Astro",
       "languages": [
         {
@@ -236,7 +236,7 @@
         {
           "name": "TypeScript",
           "color": "#3178c6",
-          "size": 24086
+          "size": 24290
         },
         {
           "name": "JavaScript",
@@ -390,7 +390,7 @@
     {
       "name": "TypeScript",
       "color": "#3178c6",
-      "size": 1145918,
+      "size": 1146122,
       "percent": 51.1
     },
     {
